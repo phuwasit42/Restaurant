@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เมนูอาหาร</title>
+    <link rel="stylesheet" href="menu.css"> <!-- เชื่อมโยงไฟล์ CSS -->
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="promotion.html">Promotion</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="login-link">Login</a></li>
+                <div class="cart-and-favorites">
+                    <div class="cart-icon" onclick="toggleCart()">
+                        <img src="picture/ตะกร้าสินค้า2.png" alt="Cart" width="40" height="40">
+                        <span id="cart-count">0</span>
+                    </div>
+                </div>
+                <div id="cart-container" class="cart-container" style="display:none;">
+                    <h2>รายการในตะกร้า</h2>
+                    <ul id="cart-items"></ul>
+                    <p>ราคารวม: <span id="cart-total">0</span> บาท</p>
+                    
+                    <!-- ปุ่มล้างตะกร้าและสั่งซื้อสินค้า -->
+                    <div class="cart-buttons">
+                        <button id="clear-cart" class="btn-clear-cart">ล้างตะกร้า</button>
+                        <button id="checkout" class="btn-checkout">ชำระเงิน</button>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Left sidebar for categories -->
+        <aside class="sidebar">
+            <img src="picture/ปก.jpg" alt="Menu Icon" class="menu-icon" width="200" height="250">
+            <div class="search-box">
+                <input type="text" placeholder="ค้นหาเมนู..." id="search-menu">
+                <button type="button" class="search-btn" onclick="searchMenu()">ค้นหา</button>
+            </div>
+
+            <h2>เมนู</h2>
+            <ul>
+                <li><a href="#maincourse">เมนูหลัก</a></li>
+                <li><a href="#grilledfriedfood">ย่าง ทอด</a></li>
+                <li><a href="#rice">ข้าว/อื่นๆ</a></li>
+                <li><a href="#drinks">เครื่องดื่ม</a></li>
+            </ul>
+            <div class="price-range">
+                <label for="price-range">ค้นหาตามราคา</label>
+                <input type="range" id="price-range" min="0" max="200" value="100" step="10">
+                <div class="price-values">
+                    <input type="number" id="min-price-value" value="20" min="0" max="200">
+                    <input type="number" id="max-price-value" value="200" min="0" max="200">
+                </div>
+            </div>
+        </aside>
+
+        <section class="main-content">
+
+            <!-- Modal -->
+<div id="addToCartModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>เพิ่มรายการเข้าตะกร้า</h2>
+        
+        <label for="quantity">จำนวน:</label>
+        <input type="number" id="quantity" name="quantity" value="1" min="1">
+        
+        <label for="item-details">รายละเอียดของอาหาร:</label>
+        <textarea id="item-details" placeholder="กรอกรายละเอียดของอาหาร..."></textarea>
+        
+        <label for="fork-option">
+            <input type="checkbox" id="fork-option"> รับช้อนส้อม
+        </label>
+        <button id="confirm-add-to-cart">ยืนยันการเพิ่มเข้าตะกร้า</button>
+    </div>
+</div>
+
+  
+  
+            <!-- เมนูหลัก -->
+            <section class="main-content">
+                <h1 id="maincourse">เมนูหลัก</h1>
+                <h2>ส้มตำ</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <img src="picture/ตำไทย.jpg" alt="ตำไทย" class="menu-item-image">
+                        <p>ตำไทย 35.-</p>
+                        <button class="button-73 add-to-cart-btn" data-name="ตำไทย" data-price="35">เพิ่มเข้าตะกร้า</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="picture/ตำปูปลาร้า.webp">
+                        <p>ตำปูปลาร้า 40.-</p>
+                        <button class="button-73 add-to-cart-btn" data-name="ตำปูปลาร้า" data-price="40">เพิ่มเข้าตะกร้า</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="picture/ตำข้าวโพด.png">
+                        <p>ตำข้าวโพด 50.-</p>
+                        <button class="button-73 add-to-cart-btn" data-name="ตำข้าวโพด" data-price="50">เพิ่มเข้าตะกร้า</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="picture/ตำแตง.jpg">
+                        <p>ตำแตง 35.-</p>
+                        <button class="button-73 add-to-cart-btn" data-name="ตำแตง" data-price="35">เพิ่มเข้าตะกร้า</button>
+                    </div>
+                </div>
+            </section>
+            <section class="main-content">
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <img src="picture/ตำถั่วฝักยาว.jpg" alt="ตำไทย" class="menu-item-image">
+                        <p>ตำถั่วฝักยาว 40.-</p>
+                        <button class="button-73 add-to-cart-btn" data-name="ตำถั่วฝักยาว" data-price="40">เพิ่มเข้าตะกร้า</button>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section class="main-content">
+                <div class="menu-section">
+                    <h2>ยำ</h2>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="picture/ยำทะเลรวม.jpg ">
+                            <p>ยำทะเลรวม 80.-</p>
+                            <button class="button-73 add-to-cart-btn" data-name="ยำทะเลรวม"
+                                data-price="80">เพิ่มเข้าตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="picture/ยำวุ้นเส้น.jpg">
+                            <p>ยำวุ้นเส้น 40.-</p>
+                            <button class="button-73 add-to-cart-btn" data-name="ยำวุ้นเส้น"
+                                data-price="40">เพิ่มเข้าตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="picture/ยำหมูยอ.jpg">
+                            <p>ยำหมูยอ 70.-</p>
+                            <button class="button-73 add-to-cart-btn" data-name="ยำหมูยอ" data-price="70">เพิ่มเข้าตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="picture/ยำไข่แดงเค็ม.jpg">
+                            <p>ยำไข่แดงเค็ม 80.-</p>
+                            <button class="button-73 add-to-cart-btn" data-name="ยำไข่แดงเค็ม"
+                                data-price="80">เพิ่มเข้าตะกร้า</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="menu-section">
+                    <h2>ลาบ/น้ำตก</h2>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="picture/ลาบหมู.jpg">
+                            <p>ลาบหมู 60.-</p>
+                            <button class="button-73 add-to-cart-btn" data-name="ลาบหมู" data-price="60">เพิ่มเข้าตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="picture/ลาบปลาดุก.jpg">
+                            <p>ลาบปลาดุก 65.-</p>
+                            <button class="button-73 add-to-cart-btn" data-name="ลาบปลาดุก"
+                                data-price="65">เพิ่มเข้าตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="picture/น้ำตกหมู.jpg">
+                            <p> น้ำตกหมู 60.-</p>
+                            <button class="button-73 add-to-cart-btn" data-name="น้ำตกหมู"
+                                data-price="60">เพิ่มเข้าตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="picture/ตับหวาน.jpg" alt="เมนู12">
+                            <p> ตับหวาน 65.-</p>
+                            <button class="button-73 add-to-cart-btn" data-name="ตับหวาน" data-price="65">เพิ่มเข้าตะกร้า</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-section">
+                    <h2>ต้มเเซ่บ</h2>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="picture/ต้มโคล้ง.jpg" alt="เมนู9">
+                            <p>ต้มโคล้ง 89.-</p>
+                            <button class="button-73 add-to-cart-btn" data-name="ต้มโคล้ง"
+                                data-price="89">เพิ่มเข้าตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="picture/ต้มยำกุ้ง.jpg" alt="เมนู10">
+                            <p>ต้มยำกุ้ง 99.-</p>
+                            <button class="button-73 add-to-cart-btn" data-name="ต้มยำกุ้ง"
+                                data-price="99">เพิ่มเข้าตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="picture/ต้มเเซ่บ.jpg" alt="เมนู11">
+                            <p>ต้มเเซ่บ 89.-</p>
+                            <button class="button-73 add-to-cart-btn" data-name="ต้มเเซ่บ"
+                                data-price="89">เพิ่มเข้าตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="picture/เล้งหมู.jpg" alt="เมนู12">
+                            <p>เล้งหมู 109.-</p>
+                            <button class="button-73 add-to-cart-btn" data-name="เล้งหมู"
+                                data-price="109">เพิ่มเข้าตะกร้า</button>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="main-content">
+                    <h1 id="grilledfriedfood"></h1>
+                    <h2>ย่าง/ทอด</h2>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <img src="picture/ลูกชิ้น.jpg" alt="เมนู9">
+                                <p>ลูกชิ้น 10.-</p>
+                                <button class="button-73 add-to-cart-btn" data-name="ลูกชิ้น" data-price="10">เพิ่มเข้าตะกร้า</button>
+                            </div>
+                            <div class="menu-item">
+                                <img src="picture/ไก่ย่าง.jpg" alt="เมนู10">
+                                <p>ไก่ย่าง 15.-</p>
+                                <button class="button-73 add-to-cart-btn" data-name="ไก่ย่าง" data-price="15">เพิ่มเข้าตะกร้า</button>
+                            </div>
+                            <div class="menu-item">
+                                <img src="picture/ปีกไก่ทอด.jpg" alt="เมนู11">
+                                <p>ปีกไก่ทอด 50.-</p>
+                                <button class="button-73 add-to-cart-btn" data-name="ปีกไก่ทอด"
+                                    data-price="50">เพิ่มเข้าตะกร้า</button>
+                            </div>
+                            <div class="menu-item">
+                                <img src="picture/หมูทอด.jpg" alt="เมนู12">
+                                <p>หมูทอด 80.-</p>
+                                <button class="button-73 add-to-cart-btn" data-name="หมูทอด" data-price="80">เพิ่มเข้าตะกร้า</button>
+                            </div>
+                        </div>
+                </section>
+
+
+                <div class="menu-section">
+                    <h1 id="rice"></h1>
+                    <h2>ข้าว/อื่นๆ</h2>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="picture/ข้าวสวย.jpg" alt="เมนู9">
+                            <p>ข้าวสวย 10.-</p>
+                            <button class="button-73 add-to-cart-btn" data-name="ข้าวสวย" data-price="10">เพิ่มเข้าตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="picture/ขนมจีน.jpg" alt="เมนู10">
+                            <p>ขนมจีน 15.-</p>
+                            <button class="button-73 add-to-cart-btn" data-name="ขนมจีน" data-price="15">เพิ่มเข้าตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="picture/เส้นหมี่.jpg" alt="เมนู11">
+                            <p>เส้นหมี่ 15.-</p>
+                            <button class="button-73 add-to-cart-btn" data-name="เส้นหมี่"
+                                data-price="15">เพิ่มเข้าตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="picture/เส้นมาม่า.jpg" alt="เมนู12">
+                            <p>เส้นมาม่า 15.-</p>
+                            <button class="button-73 add-to-cart-btn" data-name="เส้นมาม่า"
+                                data-price="15">เพิ่มเข้าตะกร้า</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-section">
+                    <h1 id="drinks"></h1>
+                    <h2>เครื่องดื่ม</h2>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="picture/น้ำเปล่า.jpg" alt="เมนู9">
+                            <p>น้ำเปล่า 10.-</p>
+                            <button class="button-73 add-to-cart-btn" data-name="น้ำเปล่า"
+                                data-price="10">เพิ่มเข้าตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="picture/โค๊ก.jpg" alt="เมนู10">
+                            <p>โค๊ก 20.-</p>
+                            <button class="button-73 add-to-cart-btn" data-name="โค๊ก" data-price="20">เพิ่มเข้าตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="picture/เเตงโมปั่น.jpg" alt="เมนู11">
+                            <p>น้ำเเตงโมปั่น 45.-</p>
+                            <button class="button-73 add-to-cart-btn" data-name="น้ำแตงโมปั่น"
+                                data-price="45">เพิ่มเข้าตะกร้า</button>
+                        </div>
+                        <div class="menu-item">
+                            <img src="picture/ส้มปั่น.jpg" alt="เมนู12">
+                            <p>น้ำส้มปั่น 45.-</p>
+                            <button class="button-73 add-to-cart-btn" data-name="น้ำส้มปั่น"
+                                data-price="45">เพิ่มเข้าตะกร้า</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+    </div>
+    <script src="menu.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript -->
+</body>
+</html>

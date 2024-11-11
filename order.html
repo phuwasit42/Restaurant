@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายการคำสั่งซื้อ</title>
+    <link rel="stylesheet" href="order.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3>รายการคำสั่งซื้อ</h3>
+            <ul>
+                <li><a href="#" onclick="showSection('order-history')">ประวัติคำสั่งซื้อ</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Section: Order History -->
+            <section id="order-history" class="order-section">
+                <h2>ประวัติการสั่งซื้อ</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ลำดับที่</th>
+                            <th>หมายเลขคำสั่งซื้อ</th>
+                            <th>วันที่</th>
+                            <th>รายการอาหาร</th>
+                            <th>สถานะ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="order-table">
+                        <!-- จะมีการเพิ่มรายการอัตโนมัติโดย JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="order.js"></script>
+    <script>
+        function showSection(sectionId) {
+            // ซ่อนทุก section ก่อน
+            document.querySelectorAll('.order-section').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // แสดง section ที่ต้องการ
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>

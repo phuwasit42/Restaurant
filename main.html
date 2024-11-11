@@ -1,0 +1,87 @@
+<!-- main.html -->
+<!DOCTYPE html>
+<html lang="th">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thai Restaurant</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="promotion.html">Promotion</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <h2 id="welcome-message"></h2>
+                <li id="login-container"><a href="login.html">Login</a></li>
+                <li id="logout-container" style="display: none;">
+                    <button id="logout-btn">Logout</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <!-- Main Content -->
+    <main>
+        <section class="hero">
+        </section>
+        <section class="hero">
+        </section>
+        <section class="hero">
+        </section>
+        <section class="hero">
+        </section>
+    </main>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const username = localStorage.getItem('username');
+        const loginContainer = document.getElementById('login-container');
+        const logoutContainer = document.getElementById('logout-container');
+        const welcomeMessage = document.getElementById('welcome-message');
+
+        // Check if user is logged in
+        if (username) {
+            welcomeMessage.innerText = `Welcome, ${username}`;
+            loginContainer.style.display = 'none'; // Hide the "Login" button
+            logoutContainer.style.display = 'inline'; // Show the "Logout" button
+        } else {
+            welcomeMessage.innerText = '';
+            loginContainer.style.display = 'inline'; // Show the "Login" button
+            logoutContainer.style.display = 'none'; // Hide the "Logout" button
+        }
+
+        // Logout functionality
+        document.getElementById('logout-btn').addEventListener('click', function() {
+            // Clear user data from localStorage
+            localStorage.removeItem('username');
+            localStorage.removeItem('role');
+
+            // Reset UI
+            welcomeMessage.innerText = '';
+            loginContainer.style.display = 'inline'; // Show the "Login" button
+            logoutContainer.style.display = 'none'; // Hide the "Logout" button
+
+            // Redirect to the login page
+            window.location.href = 'login.html';
+        });
+    });
+</script>
+
+
+
+
+</html>

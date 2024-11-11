@@ -1,0 +1,78 @@
+body {
+    font-family: 'Mali', sans-serif;
+    background-color: #f9f9f9;
+    color: #000000;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.order-status-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.order-status-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.order-id {
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #ff0000;
+}
+
+.order-tracker {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.order-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.order-step .icon {
+    background-color: #e0e0e0;
+    color: #ff0000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.order-step.completed .icon {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+.order-step .label {
+    font-size: 16px;
+}
+
+.order-line {
+    height: 5px;
+    flex: 1;
+    background-color: #e0e0e0;
+    margin: 0 10px;
+    position: relative;
+}
+
+.order-line.completed {
+    background-color: #006400;
+}

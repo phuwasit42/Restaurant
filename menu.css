@@ -1,0 +1,567 @@
+/* Menu Page Styling */
+body {
+    margin: 0;
+    font-family: 'Mali', sans-serif;
+    background-color: white;
+}
+
+header {
+    background-color: black;
+    padding: 14px 0;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.menu-items {
+    display: flex;
+}
+
+.menu-item {
+    width: 22%;
+    margin: 10px;
+    text-align: center;
+    border: 1px solid #ccc; /* เพิ่มกรอบรอบแต่ละเมนู */
+    border-radius: 10px; /* เพิ่มขอบมน */
+    padding: 15px; /* เพิ่มพื้นที่รอบเนื้อหา */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้เมนูดูมีมิติ */
+    transition: transform 0.2s; /* เพิ่มเอฟเฟกต์เมื่อเมนูถูกโฮเวอร์ */
+}
+
+.menu-item img {
+    width: 190px; /* เพิ่มขนาดจาก 152px เป็น 190px (เพิ่มประมาณ 25%) */
+    height: 150px; /* เพิ่มขนาดจาก 86px เป็น 108px (เพิ่มประมาณ 25%) */
+    border-radius: 8px;
+}
+
+.menu-item:hover {
+    transform: scale(1.05); /* ขยายเมนูเล็กน้อยเมื่อโฮเวอร์ */
+}
+
+.menu-item p {
+    font-size: 18px;
+    color: #000;
+}
+
+.menu-icon {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* Makes the image circular */
+    object-fit: cover;
+    /* Ensures the image fits inside the circular frame */
+}
+
+/* รูปแบบกล่องค้นหา */
+.search-box {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-box input {
+    padding: 10px;
+    width: 200px;
+    border: 2px solid #a35a33;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-btn {
+    background-color: #a35a33;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #8b4513;
+}
+
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+#cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.cart-container {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.cart-container p {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.container {
+    display: flex;
+    background-color: white;
+}
+
+/* Sidebar */
+.sidebar {
+    position: sticky; /* ทำให้ sidebar ยึดอยู่กับตำแหน่งเมื่อเลื่อน */
+    top: 20px; /* ระยะห่างจากด้านบนของหน้าจอ */
+    height: 100vh;
+    align-self: flex-start; /* ทำให้เริ่มยึดจากด้านบนเมื่อ scroll */
+    padding: 20px;
+    background-color: #f5dbaf;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเพื่อให้ sidebar ดูชัดเจนขึ้น */
+    z-index: 1000; /* ให้อยู่เหนือเนื้อหาอื่น ๆ */
+}
+
+
+.sidebar h2 {
+    font-size: 24px;
+    color: #d32f2f;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #000;
+}
+
+.sidebar ul li a:hover {
+    color: #d32f2f;
+}
+
+/* Main content */
+.main-content {
+    width: 80%;
+    padding: 20px;
+}
+
+.main-content h1 {
+    font-size: 32px;
+    color: #d32f2f;
+    margin-bottom: 20px;
+}
+
+
+.cart-container {
+    margin: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-container h2 {
+    margin: 0 0 10px 0;
+}
+
+.cart-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-container li {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    width: 100%; /* ครอบคลุมพื้นที่ทั้งหมดของ container */
+    max-height: 120px; /* กำหนดความสูงสูงสุด */
+    overflow: hidden; /* ซ่อนส่วนที่เกินจากกรอบ */
+    box-sizing: border-box;
+}
+
+.cart-item-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* เพิ่มช่องว่างระหว่างรูปภาพกับรายละเอียด */
+    max-height: 100px; /* กำหนดความสูงสูงสุดของ container */
+    overflow: hidden; /* ซ่อนเนื้อหาที่เกินจาก container */
+}
+
+.cart-item {
+    display: flex;
+    flex-direction: column; /* แยกรายละเอียดสินค้าให้แสดงในแนวตั้ง */
+}
+
+
+.cart-item-details {
+    margin-bottom: 10px;
+}
+
+
+.item-details {
+    margin-left: 10px;
+    margin-top: 5px;
+    display: block;
+}
+
+.item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover; /* จัดให้รูปภาพแสดงในขนาดที่เหมาะสม */
+    border-radius: 5px; /* เพิ่มขอบมนให้กับรูปภาพ */
+}
+
+.item-image-container {
+    flex-shrink: 0; /* ป้องกันการย่อรูปภาพ */
+}
+
+.item-info {
+    flex: 2;
+    margin-right: 15px;
+}
+
+.item-info-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden; /* ซ่อนส่วนที่เกินจากกรอบ */
+    white-space: nowrap; /* ทำให้ข้อความไม่ตัดบรรทัด */
+    text-overflow: ellipsis; /* ใช้จุดสามจุดสำหรับข้อความที่เกิน */
+}
+
+.item-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d32f2f;
+    margin-top: 10px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* ย้ายการควบคุมจำนวนไปด้านขวาสุดของกรอบ */
+}
+
+.quantity-controls button {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.quantity-controls button:hover {
+    background-color: #b71c1c;
+}
+
+.quantity-controls span {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.cart-container p {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.cart-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.cart-buttons button {
+    background-color: #d32f2f;
+    font-family: 'Mali', sans-serif;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 45%;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cart-buttons button:hover {
+    background-color: #b71c1c;
+    transform: scale(1.05);
+}
+
+.cart-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.btn-view-cart {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.btn-clear-cart, .btn-checkout {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn-clear-cart:hover, .btn-checkout:hover {
+    background-color: #b71c1c;
+}
+
+
+.menu-item textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.menu-item label {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+/* The Modal (background) */
+/* The Modal (background) */
+.modal {
+    display: none; /* ซ่อน modal โดย default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* พื้นหลังสีดำจาง ๆ */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 50px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px; /* กำหนดขนาดสูงสุด */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-family: 'Mali', sans-serif; /* ใช้ฟอนต์เดียวกับเว็บ */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Form Styling inside the modal */
+.modal-content h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.modal-content input[type="number"],
+.modal-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.modal-content textarea {
+    resize: none;
+    height: 80px;
+}
+
+.modal-content input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.modal-content button {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.modal-content button:hover {
+    background-color: #b71c1c;
+}
+
+.button-73 {
+    appearance: none;
+    background-color: #ff0000;
+    border-radius: 40em;
+    border-style: none;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Mali', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -.24px;
+    margin: 0;
+    outline: none;
+    padding: 1rem 1.3rem;
+    quotes: auto;
+    text-align: center;
+    text-decoration: none;
+    transition: all .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-73:hover {
+    background-color: #FFC229;
+    box-shadow: #FF6314 0 -6px 8px inset;
+    transform: scale(1.125);
+  }
+  
+  .button-73:active {
+    transform: scale(1.025);
+  }
+  
+  @media (min-width: 768px) {
+    .button-73 {
+      font-size: 1rem;
+      padding: 0.25rem 0.5rem;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth; /* ทำให้การเลื่อนหน้าเว็บดูสมูท */
+}
+
+.price-range {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.price-range label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+input[type="range"] {
+    width: 56%; /* ลดความกว้างลงประมาณ 30% */
+    margin: 5px 0;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: #2e7d32;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #2e7d32;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.price-values {
+    display: flex;
+    justify-content: space-between;
+    width: 56%; /* ความกว้างเหมือนกับ slider */
+    margin-top: 10px;
+}
+
+.price-values input {
+    width: 80px;
+    padding: 5px;
+    text-align: center;
+    border: 2px solid #2e7d32;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+
+
+  
+

@@ -1,0 +1,482 @@
+/* style.css */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Mali", system-ui;
+    background-color: #1d1c1c; /* เปลี่ยนเป็นสีเข้มให้ดูเรียบง่าย */
+    color: #ffffff;
+    height: 100%; /* ตั้งค่าความสูงเต็มหน้าจอ */
+}
+
+header {
+    padding: 10px 0;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 15px;
+}
+
+.navbar a:hover {
+    background-color: #ff0000;
+    border-radius: 5px;
+    transition: background-color 0.7s, transform 0.7s;
+}
+
+.navbar .login-link {
+    color: #fff5e0;
+}
+
+/* Login Modal Styles */
+.login-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background-color: #603813;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 400px;
+    color: white;
+    position: relative;
+}
+
+.login-image {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-submit,.btn-register {
+    background-color: #a35a33;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-submit:hover,
+.btn-register:hover {
+    background-color: #8b4513;
+}
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+}
+
+
+.hero-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin: 5px 0;
+    color: #ffffff;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin: 5px 0;
+    color: #a35a33;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    color: #ffffff;
+}
+
+
+.hero h1 {
+
+    font-size: 80px;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 100px;
+    margin: 5px 0 0;
+}
+
+.hero-content {
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    color: white;
+    text-align: left;
+    z-index: 2;
+}
+
+.main-img {
+    width: 45%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+/* Register Modal Styles */
+.register-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.register-box {
+    background-color: #603813;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 400px;
+    color: white;
+    position: relative;
+}
+
+.register-image {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-submit {
+    background-color: #a35a33;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #8b4513;
+}
+
+
+/* Main container */
+.container {
+    display: flex;
+    background-color: #fdf4e3;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 20%;
+    padding: 20px;
+    background-color: #f5dbaf;
+    text-align: center;
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    color: #d32f2f;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #000;
+}
+
+.sidebar ul li a:hover {
+    color: #d32f2f;
+}
+
+/* Main content */
+.main-content {
+    width: 80%;
+    padding: 20px;
+}
+
+.main-content h1 {
+    font-size: 32px;
+    color: #d32f2f;
+    margin-bottom: 20px;
+}
+
+/* Menu items grid */
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    width: 22%;
+    margin: 10px;
+    text-align: center;
+}
+
+.menu-item img {
+    width: 152px;
+    height: 86px;
+    border-radius: 8px;
+}
+
+.menu-item p {
+    font-size: 18px;
+    color: #000;
+}
+
+.menu-icon {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* Makes the image circular */
+    object-fit: cover;
+    /* Ensures the image fits inside the circular frame */
+}
+
+/* รูปแบบกล่องค้นหา */
+.search-box {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-box input {
+    padding: 10px;
+    width: 300px;
+    border: 2px solid #a35a33;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-btn {
+    background-color: #a35a33;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #8b4513;
+}
+
+
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+#cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.cart-container {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.cart-container p {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+.cart-container h2 {
+    margin: 0 0 10px 0;
+}
+
+.cart-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-container li {
+    margin-bottom: 10px;
+}
+
+/* mainstyle.css */
+
+.Btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: rgb(255, 65, 65);
+  }
+  
+  /* Plus sign */
+  .sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign svg {
+    width: 17px;
+  }
+  
+  .sign svg path {
+    fill: white;
+  }
+  
+  /* Text */
+  .text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: .3s;
+  }
+
+  .promotion {
+    display: flex;
+    justify-content: center; /* จัดให้อยู่ตรงกลางในแนวนอน */
+    align-items: center; /* จัดให้อยู่ตรงกลางในแนวตั้ง ถ้าจำเป็น */
+    gap: 30px; /* เพิ่มระยะห่างระหว่างกรอบรูปภาพ */
+}
+
+  
+  .promo-frame {
+    display: flex;
+    width: 600px;
+    height: 800px;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: transform 0.5s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.promo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.promo-frame:hover {
+    transform: scale(1.05);
+}
+
+
+

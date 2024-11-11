@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ช่องทางการชำระเงิน</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+
+<body>
+
+    <main>
+        <h2 class="page-title">วิธีการชำระเงิน</h2>
+        <div class="payment-container">
+            <!-- ส่วนเลือกวิธีการรับอาหาร -->
+            <section class="delivery-options">
+                <h3>เลือกวิธีการรับอาหาร</h3>
+                <div class="delivery-option">
+                    <label>
+                        <input type="radio" name="deliveryOption" value="pick-up" required> รับที่ร้าน
+                    </label>
+                </div>
+                <div class="delivery-option">
+                    <label>
+                        <input type="radio" name="deliveryOption" value="delivery"> จัดส่ง
+                    </label>
+                </div>
+                <div id="address-details" style="display: none;">
+                    <label for="delivery-address">กรุณากรอกรายละเอียดที่อยู่:</label>
+                    <textarea id="delivery-address" rows="3" placeholder="กรุณากรอกรายละเอียดที่อยู่ของคุณที่นี่..."></textarea>
+                </div>
+            </section>
+
+            <!-- ส่วนเลือกวิธีการชำระเงิน -->
+            <section class="payment-methods">
+                <h3>เลือกวิธีการชำระเงิน</h3>
+                <div class="payment-option">
+                    <label>
+                        <input type="radio" name="paymentMethod" value="credit-card" required>
+                        <img src="picture/visa.png" alt="บัตรเครดิต"> ชำระเงินด้วยบัตรเครดิต หรือ เดบิต
+                    </label>
+                </div>
+
+                <div id="credit-card-details" style="display: none;">
+                    <label for="card-number">หมายเลขบัตรเครดิต:</label>
+                    <input type="text" id="card-number" maxlength="16" placeholder="กรอกหมายเลขบัตร 16 หลัก">
+            
+                    <label for="card-holder">ชื่อผู้ถือบัตร:</label>
+                    <input type="text" id="card-holder" placeholder="ชื่อผู้ถือบัตร">
+            
+                    <label for="expiry-date">วันหมดอายุ (MM/YY):</label>
+                    <input type="text" id="expiry-date" maxlength="5" placeholder="MM/YY">
+            
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" maxlength="3" placeholder="กรอก CVV">
+                </div>
+                
+                <div class="payment-option">
+                    <label>
+                        <input type="radio" name="paymentMethod" value="promptpay">
+                        <img src="picture/promptpay.png" alt="Promptpay"> ชำระด้วย Promptpay
+                    </label>
+                </div>
+                
+                <!-- เพิ่มส่วน QR Code Promptpay -->
+                <div id="promptpay-details" style="display: none;">
+                    <h3>ชำระผ่าน Promptpay</h3>
+                    <img src="picture/QR.png" alt="QR Code Promptpay" width="200">
+                    <p>โปรดแสกน QR Code เพื่อชำระเงิน</p>
+                    <button id="confirm-payment" type="button">ยืนยันการชำระเงิน</button>
+                </div>
+
+                <div class="payment-option">
+                    <label>
+                        <input type="radio" name="paymentMethod" value="wallet">
+                        <img src="picture/truemoney.png" alt="วอลเล็ท"> ชำระด้วย Truemoney wallet
+                    </label>
+                </div>
+                
+                <!-- ส่วนสำหรับกรอกเบอร์โทรศัพท์และ OTP สำหรับ Truemoney Wallet -->
+                <div id="truemoney-details" style="display: none;">
+                    <label for="truemoney-phone">เบอร์โทรศัพท์:</label>
+                    <input type="text" id="truemoney-phone" maxlength="10" placeholder="กรอกเบอร์โทรศัพท์ 10 หลัก">
+                
+                    <button id="request-otp" type="button">ขอ OTP</button>
+                
+                    <div id="otp-section" style="display: none; margin-top: 10px;">
+                        <label for="otp-code">กรอก OTP:</label>
+                        <input type="text" id="otp-code" maxlength="6" placeholder="กรอก OTP">
+                        <button id="confirm-otp" type="button">ยืนยัน OTP</button>
+                    </div>
+                </div>
+                
+                <div class="payment-option">
+                    <label>
+                        <input type="radio" name="paymentMethod" value="cash">
+                        <img src="picture/cash.png" alt="เงินสด"> ชำระเงินสดที่ร้าน
+                    </label>
+                </div>
+            </section>
+
+            <!-- ส่วนสรุปรายการสั่งซื้อ -->
+            <section class="order-summary">
+                <h3>สรุปรายการสั่งซื้อ</h3>
+                <ul id="order-items">
+                    <!-- รายการอาหารจะถูกสร้างด้วย JavaScript -->
+                </ul>
+                <p>ราคารวม: <span id="total-price">0</span> บาท</p>
+            </section>
+        </div>
+
+        <!-- ปุ่มสั่งซื้อ -->
+        <div class="order-button">
+            <button id="placeOrderButton" type="button">สั่งซื้อ</button>
+        </div>
+    </main>
+
+    <script src="payment.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เข้าสู่ระบบ</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- เชื่อมโยง Font Awesome สำหรับไอคอน -->
+</head>
+<body>
+    <section class="login-section">
+        <div class="login-container">
+            <a href="main.html" class="home-icon"><i class="fas fa-home"></i></a> <!-- ปุ่มไอคอนรูปบ้าน -->
+            <h2>Login</h2>
+            <form action="submit-login" method="POST">
+                <div class="input-group">
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                    <i class="icon-user"></i>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <i class="icon-lock"></i>
+                </div>
+                <div class="options">
+                    <label><input type="checkbox" name="remember"> Remember me</label>
+                    <a href="#" onclick="showResetForm()">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn-submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="register.html">Register</a></p>
+        </div>
+    </section>
+    <script src="login.js"></script>
+</body>
+</html>

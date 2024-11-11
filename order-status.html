@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สถานะคำสั่งซื้อ</title>
+    <link rel="stylesheet" href="order-status.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- สำหรับไอคอน -->
+</head>
+<body>
+    <div class="order-status-container">
+        <h2>สถานะคำสั่งซื้อ</h2>
+        <div class="order-id">คำสั่งซื้อ #123456</div>
+        <div class="order-tracker">
+            <div class="order-step completed">
+                <div class="icon"><i class="fas fa-clipboard-check"></i></div>
+                <div class="label">กำลังตรวจสอบคำสั่งซื้อ</div>
+            </div>
+            <div class="order-line completed"></div>
+            <div class="order-step completed">
+                <div class="icon"><i class="fas fa-utensils"></i></div>
+                <div class="label">กำลังดำเนินการ</div>
+            </div>
+            <div class="order-line"></div>
+            <div class="order-step">
+                <div class="icon"><i class="fas fa-truck"></i></div>
+                <div class="label">กำลังจัดส่ง</div>
+            </div>
+            <div class="order-line"></div>
+            <div class="order-step">
+                <div class="icon"><i class="fas fa-concierge-bell"></i></div>
+                <div class="label">เสร็จสิ้น</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
